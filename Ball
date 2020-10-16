@@ -1,0 +1,16 @@
+int heigth;
+        int heigth2=0;
+        int count=0;
+        Scanner s=new Scanner(System.in);
+
+        System.out.println("Select heigth of ball:");
+        do{
+            heigth=s.nextInt();
+            while (heigth>100){
+        heigth2= (int) (heigth*0.9);
+                System.out.println("Heigth of ball: "+heigth2);
+        heigth=heigth2;
+        count ++;
+            }
+        }while(heigth>100);
+        System.out.println("Number of bounces: "+count);
