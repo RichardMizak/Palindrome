@@ -1,9 +1,11 @@
 package sk.kosickaakademia.mizak.programko.Students;
 
+import sk.kosickaakademia.mizak.programko.Students.Hobby.Hobby;
+
 import java.time.LocalDate;
 import java.util.Date;
 
-public class Student {
+public class Student extends Hobby {
     private String firstName;
     private String lastName;
     private classType classType;
@@ -11,13 +13,18 @@ public class Student {
     private Date dob;
     private Credit grades;
 
-    public <setDob> Student(String fname, String lastName, Credit grades, classType classname){
+    public <setDob> Student(String fname, String lastName, Credit grades, classType classname, classType Hobbyname){
+
+        super(Hobbyname);
         firstName=fname;
         this.lastName=lastName;
         this.grades=grades;
         this.classType=classname;
 
     }
+
+
+
 
     public void setSalary(int salary) {
         this.salary = salary;
