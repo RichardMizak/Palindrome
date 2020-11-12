@@ -1,0 +1,74 @@
+package sk.kosickaakademia.mizak;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
+import java.util.Date;
+
+public class Student {
+    public String getfName() {
+        return fName;
+    }
+
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
+    }
+
+    private String fName;
+    private String lName;
+    private String id;
+    private int age;
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+    private String car;
+    private double height;
+    private int weight;
+
+    public Student(String fName, String lName, String id){
+        this.fName=fName;
+        this.lName=lName;
+        this.id=id;
+        setAge();
+    }
+
+    private void setAge() {
+        LocalDate today = LocalDate.now();
+        LocalDate birthday = LocalDate.of(1960, Month.JANUARY, 1);
+        Period p = Period.between(birthday, today);
+
+    }
+    public Gender getGender(){
+        return id.charAt(2)<'2'?Gender.MALE:Gender.FEMALE;
+    }
+
+    public String getCar() {
+        return car;
+    }
+
+    public void setCar(String car) {
+        this.car = car;
+    }
+}
