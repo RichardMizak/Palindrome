@@ -1,0 +1,45 @@
+package sk.kosickaakademia.mizak;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Main {
+
+
+    public static void main(String[] args) {
+        try{
+            FileReader fr=new FileReader("resource/students.dat");
+            String line;
+            BufferedReader bf=new BufferedReader(fr);
+            line= bf.readLine();
+            int num=Integer.parseInt(line);
+            System.out.println("File contains "+num+" records");
+            Student[]array=new Student[num];
+            for (int i=0;i<num;i++){
+                line= bf.readLine();
+
+                String[]temp=line.split(" ");
+                Student s=new Student(temp[0],temp[1],temp[2]);
+                array[i]=s;
+            }
+            printAllStudents(array);
+
+                fr.close();
+        }catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static void printAllStudents(Student[] array) {
+        System.out.println("Students: ");
+        int len= array.length;
+        for (int i=0;i<len;i++){
+            System.out.println(array[i].getfName()+" "+array[i].getlName());
+        }
+
+    }
+
+}
